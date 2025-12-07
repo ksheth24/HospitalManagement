@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import "../formatting/RoomWiseView.css"
 
 export function RoomWiseView() {
     const [column, setColumn] = useState([])
@@ -25,27 +24,27 @@ export function RoomWiseView() {
   }, []);
 
   return (
-    <div>
-        <table className='room_wise_view'>
+    <div style={{ padding: "20px" }}>
+        <table style={{borderCollapse: "collapse", width: "100%", fontFamily: "Arial", fontSize: "14px", border: "1px solid #ccc"}}>
           <thead>
             <tr>
               {column.map((c, i) => (
-                <th key={i}>{c}</th>
+                <th key={i} style={{backgroundColor: "#f0f0f0", padding: "8px", textAlign: "left", border: "1px solid #ccc"}}>{c}</th>
               ))}
             </tr>
           </thead>
 
           <tbody>
             {records.map((record, i) => (
-                <tr key={i}>
-                  <td>{record[0]}</td>
-                  <td>{record[1]}</td>
-                  <td>{record[2]}</td>
-                  <td>{record[3]}</td>
-                  <td>{record[4]}</td>
-                  <td>{record[5]}</td>
-                  <td>{record[6]}</td>
-                  <td>{record[7]}</td>
+                <tr key={i} style={{backgroundColor: i % 2 === 0 ? "#e6f3ff" : "white"}}>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[0]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[1]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[2]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[3]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[4]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[5]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[6]}</td>
+                  <td style={{padding: "8px", border: "1px solid #ccc"}}>{record[7]}</td>
                 </tr>
               ))}
           </tbody>

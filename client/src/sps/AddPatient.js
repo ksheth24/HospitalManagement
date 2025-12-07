@@ -1,6 +1,4 @@
 import React from 'react'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 
 export function AddPatient() {
     const [ssn, setSsn] = React.useState('');
@@ -30,66 +28,111 @@ export function AddPatient() {
             });
             if (response.ok) {
                 alert("Patient added successfully!");
+                setSsn('');
+                setFirstName('');
+                setLastName('');
+                setDob('');
+                setAddress('');
+                setFunds('');
+                setContact('');
+            } else {
+                const errorText = await response.text();
+                alert("Error: " + errorText);
             }
         }
         catch (error) {
-            alert("")
+            alert("Error adding patient: " + error.message)
         }
     };
 
+    const cancel = () => {
+        setSsn('');
+        setFirstName('');
+        setLastName('');
+        setDob('');
+        setAddress('');
+        setFunds('');
+        setContact('');
+    };
+
     return (
-        <div style = {{display: 'flex', flexDirection: 'column', gap: '1rem', width: '400px'}}>
-            <TextField
-                label = "SSN"
-                value = {ssn}
-                onChange = {(e) => setSsn(e.target.value)}
-            />
-
-            <TextField
-                label = "First Name"
-                value = {firstName}
-                onChange = {(e) => setFirstName(e.target.value)}
-            />
-
-            <TextField
-                label = "Last Name"
-                value = {lastName}
-                onChange = {(e) => setLastName(e.target.value)}
-            />
-
-            <TextField
-                label = "Birthdate"
-                value = {dob}
-                onChange = {(e) => setDob(e.target.value)}
-            />
-
-            <TextField
-                label = "Address"
-                value = {address}
-                onChange = {(e) => setAddress(e.target.value)}
-            />
-
-            <TextField
-                label = "Funds"
-                value = {funds}
-                onChange = {(e) => setFunds(e.target.value)}
-            />
-
-            <TextField
-                label = "Contact"
-                value = {contact}
-                onChange = {(e) => setContact(e.target.value)}
-            />
-
-            <Button 
-                variant="outlined"
-                onClick = {submit}>
-                Send
-            </Button>
-
-
+        <div style={{padding: "20px"}}>
+            <h2 style={{margin: "0 0 20px 0", fontSize: "18px"}}>add_patient()</h2>
+            <div style={{display: "flex", gap: "20px", marginBottom: "20px"}}>
+                <div style={{display: "flex", flexDirection: "column", gap: "15px"}}>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>ssn</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={ssn}
+                            onChange={(e) => setSsn(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>Birthdate</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={dob}
+                            onChange={(e) => setDob(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>Contact</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={contact}
+                            onChange={(e) => setContact(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div style={{display: "flex", flexDirection: "column", gap: "15px"}}>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>First Name</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>Address</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div style={{display: "flex", flexDirection: "column", gap: "15px"}}>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>Last Name</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <div style={{backgroundColor: "#666", color: "white", padding: "5px 8px", fontSize: "12px"}}>Funds</div>
+                        <input 
+                            type="text" 
+                            style={{backgroundColor: "#e0e0e0", border: "none", padding: "8px", fontSize: "14px", width: "200px"}}
+                            value={funds}
+                            onChange={(e) => setFunds(e.target.value)}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div style={{display: "flex", gap: "10px", marginTop: "20px"}}>
+                <button style={{padding: "10px 30px", border: "none", backgroundColor: "#555", color: "white", cursor: "pointer", fontSize: "14px"}} onClick={cancel}>Cancel</button>
+                <button style={{padding: "10px 30px", border: "none", backgroundColor: "#555", color: "white", cursor: "pointer", fontSize: "14px"}} onClick={submit}>Add</button>
+            </div>
         </div>
-
-        
     )
 }

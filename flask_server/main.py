@@ -89,14 +89,17 @@ def get_outstanding_charges_view():
 
 @app.route('/sp/add_patient', methods=['POST'])
 def add_patient():
-    data = request.get_json()
-    connection = get_connection()
-    cursor = connection.cursor()
-    cursor.callproc("add_patient", (data["ip_ssn"], data["ip_first_name"], data["ip_last_name"], data["ip_birthdate"], data["ip_address"], data["ip_funds"], data["ip_contact"]))
-    connection.commit()
-    cursor.close()
-    connection.close()
-    return "OK", 200
+    try:
+        data = request.get_json()
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.callproc("add_patient", (data["ip_ssn"], data["ip_first_name"], data["ip_last_name"], data["ip_birthdate"], data["ip_address"], data["ip_funds"], data["ip_contact"]))
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return "OK", 200
+    except Exception as e:
+        return str(e), 400
 
 if __name__ == '__main__':
     print("connecting")

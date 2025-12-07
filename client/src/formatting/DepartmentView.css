@@ -1,28 +1,26 @@
 .department_view {
   border-collapse: collapse;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  margin-top: 20px;
 }
 
 .department_view th {
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-bottom: 2px solid #ccc;
+  background-color: #f0f0f0;
+  padding: 8px;
   text-align: left;
+  border: 1px solid #ccc;
 }
 
 .department_view td {
-  padding: 8px 12px;
-  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  border: 1px solid #ccc;
 }
 
 .department_view tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #e6f3ff;
 }
 
-.department_view tr:hover {
-  background-color: #f1f1f1;
+.department_view tr:nth-child(odd) {
+  background-color: white;
 }
