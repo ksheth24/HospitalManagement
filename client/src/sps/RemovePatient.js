@@ -7,7 +7,7 @@ export function RemovePatient() {
 
     const submit = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/sp/add_patient", {
+            const response = await fetch("http://127.0.0.1:5000/sp/remove_patient", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

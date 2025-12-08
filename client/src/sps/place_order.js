@@ -14,7 +14,7 @@ export function PlaceOrder() {
 
     const submit = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/sp/record_symptom", {
+            const response = await fetch("http://127.0.0.1:5000/sp/place_order", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

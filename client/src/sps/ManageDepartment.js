@@ -8,7 +8,7 @@ export function ManageDepartment() {
 
     const submit = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/sp/record_symptom", {
+            const response = await fetch("http://127.0.0.1:5000/sp/manage_department", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
