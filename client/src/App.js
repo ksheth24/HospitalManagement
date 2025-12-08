@@ -5,6 +5,7 @@ import { MedicalStaffView } from './views/MedicalStaffView'
 import { DepartmentView } from './views/DepartmentView'
 import { AddPatient } from './sps/AddPatient'
 import { OutstandingChargesView } from './views/OutstandingChargesView'
+import { Home } from './Home'
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { RecordSymptom } from './sps/RecordSymptom'
 import { BookAppointment } from './sps/BookAppointment'
