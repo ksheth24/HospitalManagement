@@ -29,6 +29,7 @@ function App() {
     <>
       <HashRouter>
         <Routes> 
+          <Route path = "/" element={<Home/>} />
           <Route path = "/room_wise_view" element={<RoomWiseView/>} />
           <Route path = "/symptoms_overview_view" element={<SymptomsOverviewView/>} />
           <Route path = "/medical_staff_view" element={<MedicalStaffView/>} />
