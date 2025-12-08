@@ -5,7 +5,6 @@ import { MedicalStaffView } from './views/MedicalStaffView'
 import { DepartmentView } from './views/DepartmentView'
 import { AddPatient } from './sps/AddPatient'
 import { OutstandingChargesView } from './views/OutstandingChargesView'
-import { Home } from './Home'
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { RecordSymptom } from './sps/RecordSymptom'
 import { BookAppointment } from './sps/BookAppointment'
@@ -18,7 +17,7 @@ import { AssignDoctorToAppt } from './sps/AssignDoctorToAppt'
 import { ManageDepartment } from './sps/ManageDepartment';
 import { ReleaseRoom } from './sps/ReleaseRoom'
 import { RemovePatient } from './sps/RemovePatient';
-import { RemoveStaffFromDept } from './sps/RemoveStaffFromDept.js';
+import { RemoveStaffFromDept } from './sps/RemoveStaffFromDept';
 import { CompleteAppt } from './sps/CompleteAppt.js';
 import { CompleteOrder } from './sps/CompleteOrder';
 
@@ -29,7 +28,6 @@ function App() {
     <>
       <HashRouter>
         <Routes> 
-          <Route path = "/" element={<Home/>} />
           <Route path = "/room_wise_view" element={<RoomWiseView/>} />
           <Route path = "/symptoms_overview_view" element={<SymptomsOverviewView/>} />
           <Route path = "/medical_staff_view" element={<MedicalStaffView/>} />
