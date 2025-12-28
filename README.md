@@ -2,7 +2,7 @@
 A full-stack hospital management platform designed to sreamline patient intake, medical staff workflows, and hospital record management using a React frontend and a Flask + MySQL backend.
 
 ## Database Schema
-![Logo](images/logo.svg)
+![Logo](images/EERD.png)
 ## Demo
 
 ## Features
