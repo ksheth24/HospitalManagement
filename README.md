@@ -1,8 +1,8 @@
 # Hospital Management System
-A full-stack hospital management platform designed to sreamline patient intake, medical staff workflows, and hospital record management using a React frontend and a Flas + MySQL backend.
+A full-stack hospital management platform designed to sreamline patient intake, medical staff workflows, and hospital record management using a React frontend and a Flask + MySQL backend.
 
 ## Database Schema
-
+![Logo](images/logo.svg)
 ## Demo
 
 ## Features
@@ -14,7 +14,7 @@ A full-stack hospital management platform designed to sreamline patient intake, 
 - RESTful APIs
 
 **FrontEnd**
-- React, JavaScript, CSS
+- React, Node.js, JavaScript, CSS
 
 **Tooling**
 - GitHub, Git
@@ -37,9 +37,17 @@ python main.py
 Backend running on: http://127.0.0.1:5000
 
 **Frontend Setup**
+```bash
+cd client
+npm install
+npm start
+```
+Frontend running on: http://localhost:3000/
 
 ## API Endpoints
 
 ## Engineer
 **Keshav Sheth** 
 B.S. Computer Engineering @ Georgia Tech '27
+
+

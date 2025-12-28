@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#f5f7fa"/>
+  <g stroke="#333" stroke-width="2" fill="none">
+    <rect x="20" y="20" width="260" height="120"/>
+    <rect x="320" y="20" width="260" height="120"/>
+    <rect x="20" y="160" width="560" height="120"/>
+  </g>
+  <g fill="#333" font-family="Arial" font-size="14">
+    <text x="40" y="50">Reception</text>
+    <text x="340" y="50">ER</text>
+    <text x="40" y="190">Wards / Rooms</text>
+  </g>
+</svg>
