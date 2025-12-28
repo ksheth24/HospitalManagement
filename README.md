@@ -26,7 +26,21 @@ Files (place in `db/`):
 5) View of the outstanding charges for all the patients in the hospital.
 
 **Stored Procedures**
-1) 
+1) Add a new patient to the management system.
+2) Record a new symptom for a patient, which will be used in an appointment.
+3) Book a new appointment for a patient at a specific time and date.
+4) Place a new order (lab work or perscription) for a patient as ordered by their doctor.
+5) Add a staff member to a department.
+6) Add funds to an existing patient.
+7) Assign a nurse to a room, ensuring they are not over-booked.
+8) Assign a patient to a room in the hospital, and ensures that the room is currently unoccupied.
+9) Assign a doctor to an existing appointment.
+10) Assign a staff member as the manager of a department.
+11) Remove a patient from a given room.
+12) Remove a patient from the hospital management system. 
+13) Remove a staff member from a department.
+14) Complete an appointment given its date, time, and patient SSN. 
+15) Complete a certain number of perscription & labwork orders.
 
 ## Tech Stack
 **Backend**
