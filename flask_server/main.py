@@ -2,16 +2,20 @@ from flask import Flask, request, jsonify
 import mysql.connector
 from flask_cors import CORS
 from datetime import timedelta, datetime
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 def get_connection(): 
     return mysql.connector.connect(
-        host = 'localhost',
-        user = 'root',
-        password = 'Ej20Je06@',
-        database = 'er_hospital_management'
+        host = os.getenv("DB_HOST"),
+        user = os.getenv("DB_USER"),
+        password = os.getenv("DB_PASSWORD"),
+        database = os.getenv("DB_NAME")
     )
 
 # @app.route('/getTable', methods=['GET'])
