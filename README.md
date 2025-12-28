@@ -3,9 +3,9 @@ A full-stack hospital management platform designed to sreamline patient intake, 
 
 ## Database EERD
 ![Logo](images/EERD.png)
-![Logo](images/SCHEMA.png)
 
-## Database Creation File
+## Relational Schema
+![Logo](images/SCHEMA.png)
 
 ## Demo
 
