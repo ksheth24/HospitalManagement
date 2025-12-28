@@ -1,8 +1,12 @@
 # Hospital Management System
 A full-stack hospital management platform designed to sreamline patient intake, medical staff workflows, and hospital record management using a React frontend and a Flask + MySQL backend.
 
-## Database Schema
+## Database EERD
 ![Logo](images/EERD.png)
+![Logo](images/SCHEMA.png)
+
+## Database Creation File
+
 ## Demo
 
 ## Features
