@@ -10,7 +10,7 @@ def get_connection():
     return mysql.connector.connect(
         host = 'localhost',
         user = 'root',
-        password = '7426',
+        password = 'Ej20Je06@',
         database = 'er_hospital_management'
     )
 
@@ -103,18 +103,18 @@ def record_symptom():
     data = request.get_json()
     connection = get_connection()
     cursor = connection.cursor()
-    cursor.callproc("record_symptom", (data["ip_patientId"], data["ip_numDays"], data["ip_last_name"], data["ip_apptDate"], data["ip_apptTime"], data["ip_symptomType"]))
+    cursor.callproc("record_symptom", (data["ip_patientId"], data["ip_numDays"], data["ip_apptDate"], data["ip_apptTime"], data["ip_symptomType"]))
     connection.commit()
     cursor.close()
     connection.close()
     return "OK", 200
 
-@app.route('/sp/book_apppointment', methods=['POST'])
+@app.route('/sp/book_appointment', methods=['POST'])
 def book_appointment():
     data = request.get_json()
     connection = get_connection()
     cursor = connection.cursor()
-    cursor.callproc("book_apppointment", (data["ip_patientId"], data["ip_apptDate"], data["ip_apptTime"], data["ip_apptCost"]))
+    cursor.callproc("book_appointment", (data["ip_patientId"], data["ip_apptDate"], data["ip_apptTime"], data["ip_apptCost"]))
     connection.commit()
     cursor.close()
     connection.close()
@@ -202,7 +202,7 @@ def release_room():
     data = request.get_json()
     connection = get_connection()
     cursor = connection.cursor()
-    cursor.callproc("release_room", (data["ip_roomNumber"]))
+    cursor.callproc("release_room", (data["ip_roomNumber"],))
     connection.commit()
     cursor.close()
     connection.close()
@@ -213,7 +213,7 @@ def remove_patient():
     data = request.get_json()
     connection = get_connection()
     cursor = connection.cursor()
-    cursor.callproc("remove_patient", (data["ip_ssn"]))
+    cursor.callproc("remove_patient", (data["ip_ssn"],))
     connection.commit()
     cursor.close()
     connection.close()
@@ -258,7 +258,7 @@ def complete_orders():
     data = request.get_json()
     connection = get_connection()
     cursor = connection.cursor()
-    cursor.callproc("complete_orders", (data["ip_num_orders"]))
+    cursor.callproc("complete_orders", (data["ip_num_orders"],))
     connection.commit()
     cursor.close()
     connection.close()

@@ -2,30 +2,28 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-export function RecordSymptom() {
+export function BookAppointment() {
     const [ssn, setSsn] = React.useState('');
-    const [days, setDays] = React.useState('');
     const [date, setDate] = React.useState('');
     const [time, setTime] = React.useState('');
-    const [symptom, setSymptom] = React.useState('');
+    const [cost, setCost] = React.useState('');
 
     const submit = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/sp/record_symptom", {
+            const response = await fetch("http://127.0.0.1:5000/sp/book_appointment", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     ip_patientId: ssn,
-                    ip_numDays: days,
                     ip_apptDate: date,
                     ip_apptTime: time, 
-                    ip_symptomType: symptom
+                    ip_apptCost: cost
                 })
             });
             if (response.ok) {
-                alert("Symptom recorded successfully!");
+                alert("Appointment has been booked successfully!");
             }
         }
         catch (error) {
@@ -42,12 +40,6 @@ export function RecordSymptom() {
             />
 
             <TextField
-                label = "Number Of Days"
-                value = {days}
-                onChange = {(e) => setDays(e.target.value)}
-            />
-
-            <TextField
                 label = "Appointment Date"
                 value = {date}
                 onChange = {(e) => setDate(e.target.value)}
@@ -60,9 +52,9 @@ export function RecordSymptom() {
             />
 
             <TextField
-                label = "Type of Symptom"
-                value = {symptom}
-                onChange = {(e) => setSymptom(e.target.value)}
+                label = "Appointment Cost"
+                value = {cost}
+                onChange = {(e) => setCost(e.target.value)}
             />
 
             <Button 
