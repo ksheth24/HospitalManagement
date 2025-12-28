@@ -90,5 +90,7 @@ Frontend running on: http://localhost:3000/
 ## Engineer
 **Keshav Sheth** 
 B.S. Computer Engineering @ Georgia Tech '27
-
-
+**Eshan Jain** 
+B.S. Industrial & Systems Engineering @ Georgia Tech '27
+**Ajay Desai** 
+B.S. Computer Science @ Georgia Tech '27
